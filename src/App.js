@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<NavBarL />}>
           <Route path="/" element={<First />} />
-          <Route path="/*" element={<Navigate to="/" />} />
+          <Route path="*" element={<Navigate to="/" />} />
           <Route path="/hire" element={<Hire />} />
           <Route path="/s" element={<SoeLaPyaeHtun />} />
         
