@@ -14,11 +14,11 @@ import SoeLaPyaeHtun from "./components/SoeLaPyaeHtun";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/me">
       <WavyContainer />
       <Routes>
-        <Route path="/me" element={<NavBarL />}>
-          <Route path="/me" element={<First />} />
+        <Route path="/" element={<NavBarL />}>
+          <Route path="/" element={<First />} />
           <Route path="*" element={<Navigate to="/me" />} />
           <Route path="/hire" element={<Hire />} />
           <Route path="/s" element={<SoeLaPyaeHtun />} />
