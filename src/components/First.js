@@ -67,7 +67,7 @@ const First = () => {
   }
   return (
     <>
-      <div className="w-full h-[calc(100vh-148px)] flex md:flex-row flex-col md:justify-center pt-10">
+      <div className="w-full md:h-[calc(100vh-148px)] h-[calc(100vh-168px)] flex md:flex-row flex-col md:justify-center pt-10">
         <div className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center">
           <div>
             <h1 className="text-3xl md:text-6xl">
