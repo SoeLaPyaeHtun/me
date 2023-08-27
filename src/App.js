@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate, HashRouter } from "react-router-dom";
 import "./App.css";
 import Hire from "./components/Hire";
 import First from "./components/First";
@@ -10,7 +10,7 @@ function App() {
   
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <WavyContainer />
       <Routes>
         <Route path="/me" element={<NavBarL />}>
@@ -19,7 +19,7 @@ function App() {
           <Route path="/me/hire" element={<Hire />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
