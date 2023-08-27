@@ -10,13 +10,13 @@ function App() {
   
   
   return (
-    <BrowserRouter basename="/me">
+    <BrowserRouter>
       <WavyContainer />
       <Routes>
-        <Route exact path="/" element={<NavBarL />}>
-          <Route exact path="/" element={<First />} />
-          <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/hire" element={<Hire />} />
+        <Route path="/me" element={<NavBarL />}>
+          <Route path="/me" element={<First />} />
+          <Route path="*" element={<Navigate to="/me" />} />
+          <Route path="/me/hire" element={<Hire />} />
         </Route>
       </Routes>
     </BrowserRouter>
