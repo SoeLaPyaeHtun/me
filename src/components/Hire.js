@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { WavyLink } from "react-wavy-transitions";
-import {
-  Dialog,
-  DialogBody,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+import { Dialog, DialogBody, Typography, Button } from "@material-tailwind/react";
 import { api } from "../api/api";
 import { FcApproval, FcHighPriority } from "react-icons/fc";
 import axios from "axios";
-import ReactLoading from "react-loading";
-import MovingText from "react-moving-text";
+import ReactLoading from 'react-loading';
+import MovingText from 'react-moving-text'
 
 const Hire = () => {
   const [open, setOpen] = useState(false);
@@ -23,6 +18,8 @@ const Hire = () => {
     message: "",
     ip: "",
   });
+
+  
 
   useEffect(() => {
     if (!firstRender) {
@@ -46,44 +43,57 @@ const Hire = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(mail);
-    setLoading(true);
-    addHireMeMail(mail).then((res) => {
-      console.log(typeof res.data);
-
-      if (typeof res.data == "boolean") {
-        setLoading(false);
+    console.log(mail)
+    setLoading(true)
+    addHireMeMail(mail).then(res => {
+      console.log(typeof res.data)
+      
+      if(typeof res.data == "boolean"){
+        setLoading(false)
         SetMailSucc(true);
         handleOpen();
-      } else {
-        setLoading(false);
+      }else{
+        setLoading(false)
         SetMailSucc(false);
         handleOpen();
-        console.log(res.data);
+        console.log(res.data)
       }
+      
+     
     });
+   
   };
   return (
     <div className="flex w-full h-[calc(100vh-148px)] justify-center">
-      <div className="bg-white w-4/5 h-4/5 pt-5 rounded-md shadow-lg">
-        <section className="bg-white dark:bg-gray-900">
+      <div className="w-4/5 h-4/5 pt-5 rounded-md shadow-md">
+     
+        <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+
+            
+
+
+         
+         
             <h2 className="mb-2 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-              <MovingText
-                type="shakeMix"
-                duration="2000ms"
-                delay="0s"
-                direction="normal"
-                timing="ease"
-                iteration="infinite"
-                fillMode="none"
-                className="font-extrabold"
-              >
-                Do U want to hire an idiot who loves CODE?
-              </MovingText>
+            <MovingText
+  type="shakeMix"
+  duration="2000ms"
+  delay="0s"
+  direction="normal"
+  timing="ease"
+  iteration="infinite"
+  fillMode="none"
+  className="font-extrabold">
+   
+  Do U want to hire an idiot who loves CODE?
+</MovingText>
             </h2>
             <p className="mb-4 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 md:text-5xl">
               Hire mE !
+
+            
+
             </p>
             <form className="space-y-8" onSubmit={(e) => handleSubmit(e)}>
               <div>
@@ -153,20 +163,13 @@ const Hire = () => {
                 ></textarea>
               </div>
               <div className="flex justify-between">
+          
+              
                 {/* back to home  */}
-                <WavyLink
-                  to="/"
-                  duration={1000}
-                  direction="down"
-                  color="#E47373"
-                >
-                  <Button
-                    variant="text"
-                    className="bg-white hover:bg-[#E47373] font-gg1 text-sm"
-                  >
-                    Back to home
-                  </Button>
-                </WavyLink>
+                <WavyLink to="/me" duration={1000} direction="down" color="#E47373">
+                <Button variant="text" className="bg-white hover:bg-[#E47373] font-gg1 text-sm">Back to home</Button>
+              
+            </WavyLink>
                 {/* submit button */}
                 <button type="submit">
                   <span className="relative px-6 py-3 font-bold text-black group">
@@ -177,24 +180,24 @@ const Hire = () => {
                     <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
                     <span className="relative font-gg1 text-sm">Submit</span>
                   </span>
+                  
                 </button>
               </div>
             </form>
           </div>
+     
+      
         </section>
+       
+       
+
+
+
       </div>
       <Dialog open={loading}>
-        <div
-          role="status"
-          class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2"
-        >
-          <ReactLoading
-            type={"cylon"}
-            color={"#E47373"}
-            height={100}
-            width={200}
-          />
-        </div>
+      <div role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2">
+        <ReactLoading type={"cylon"} color={"#E47373"} height={100} width={200} />
+    </div>
       </Dialog>
 
       <Dialog open={open}>

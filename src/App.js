@@ -6,14 +6,17 @@ import { WavyContainer } from "react-wavy-transitions";
 import NavBarL from "./components/NavBarL";
 
 function App() {
+
+  
+  
   return (
-    <BrowserRouter basename="/me">
+    <BrowserRouter>
       <WavyContainer />
       <Routes>
-        <Route path="/" element={<NavBarL />}>
-          <Route path="/" element={<First />} />
-          <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/hire" element={<Hire />} />
+        <Route path="/me" element={<NavBarL />}>
+          <Route path="/me" element={<First />} />
+          <Route path="*" element={<Navigate to="/me" />} />
+          <Route path="/me/hire" element={<Hire />} />
         </Route>
       </Routes>
     </BrowserRouter>
