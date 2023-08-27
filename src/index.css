@@ -25,13 +25,13 @@ html{
 }
 
 body {
-	background: linear-gradient(-45deg, #fff2ec, #fff0f6, #f3fcff, #f1fffc);
+	background: linear-gradient(-45deg, #ece8e6, #e4d2d9, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
-	animation: gradient 30s ease infinite;
+	animation: gradient 15s ease infinite;
 	height: 100vh;
 }
 
-@keyframes gradient {r
+@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -42,3 +42,4 @@ body {
 		background-position: 0% 50%;
 	}
 }
+
