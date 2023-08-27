@@ -1,16 +1,9 @@
-import {
-  Route,
-  Routes,
-  BrowserRouter,
-  Navigate
-} from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import "./App.css";
 import Hire from "./components/Hire";
 import First from "./components/First";
 import { WavyContainer } from "react-wavy-transitions";
 import NavBarL from "./components/NavBarL";
-import SoeLaPyaeHtun from "./components/SoeLaPyaeHtun";
-
 
 function App() {
   return (
@@ -21,8 +14,6 @@ function App() {
           <Route path="/" element={<First />} />
           <Route path="*" element={<Navigate to="/" />} />
           <Route path="/hire" element={<Hire />} />
-          <Route path="/s" element={<SoeLaPyaeHtun />} />
-        
         </Route>
       </Routes>
     </BrowserRouter>

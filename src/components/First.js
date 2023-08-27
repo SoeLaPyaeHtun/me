@@ -5,10 +5,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { baseurl } from "../api/api";
 
-
 const First = () => {
-
-
   const boxRef = useRef(null);
 
   useEffect(() => {
@@ -28,10 +25,7 @@ const First = () => {
     requestAnimationFrame(updateAnimation);
   }, []);
 
-
-  
-  const codeString = 
-  `import React from 'react'
+  const codeString = `import React from 'react'
 
   const SoeLaPyaeHtun = () => {
     const Skills = {
@@ -59,12 +53,13 @@ const First = () => {
 `;
 
   const fetchResume = () => {
-      const aTag = document.createElement('a');
-      aTag.href = baseurl + "HireMe/getresume?filename=Soe_La Pyae Htun_Resume.pdf";
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
-  }
+    const aTag = document.createElement("a");
+    aTag.href =
+      baseurl + "HireMe/getresume?filename=Soe_La Pyae Htun_Resume.pdf";
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
   return (
     <>
       <div className="w-full md:h-[calc(100vh-148px)] h-[calc(100vh-168px)] flex md:flex-row flex-col md:justify-center pt-10">
@@ -79,16 +74,15 @@ const First = () => {
               sequence={[
                 "Software Engineer",
                 750,
-               
+
                 "FullStack Developer",
                 750,
-              
+
                 "FrontEnd Developer",
                 750,
-               
+
                 "BackEnd Developer",
                 750,
-                
               ]}
               speed={50}
               repeat={Infinity}
@@ -143,7 +137,7 @@ const First = () => {
             <div className="px-5"></div>
 
             {/* Resume button */}
-              <button onClick={() => fetchResume()}>
+            <button onClick={() => fetchResume()}>
               <span className="px-4 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
                 <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
                 <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -182,27 +176,21 @@ const First = () => {
                   Get Resume
                 </span>
               </span>
-              </button>
-          
+            </button>
           </div>
         </div>
         <div className="w-full md:w-2/5 h-3/6 pt-10 md:h-5/6 flex justify-center items-center">
           <div
-          ref={boxRef}
-          style={
-            {
+            ref={boxRef}
+            style={{
               "--angle": "0deg",
-              "--border-color": "linear-gradient(var(--angle), #ffffff, #687aff)",
+              "--border-color":
+                "linear-gradient(var(--angle), #ffffff, #687aff)",
               "--bg-color": "linear-gradient(#ddd6f3 , #FAFAFA)",
-            }
-          }
-
-          // className="flex h-[400px] w-[400px] items-center justify-center
-          //  rounded-lg border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)]"
-          className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] items-center rotate-12">
-           
+            }}
+            className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] items-center rotate-12"
+          >
             <div className="w-full h-full -rotate-12 rounded-md">
-              
               <div className="w-full h-8 bg-gray-800 rounded-t-lg flex flex-row justify-start items-center px-3">
                 <div className="w-3 h-3 rounded-full bg-red-900"></div>
                 <div className="px-1"></div>
@@ -210,14 +198,15 @@ const First = () => {
                 <div className="px-1"></div>
                 <div className="w-3 h-3 rounded-full bg-green-900"></div>
               </div>
-              <SyntaxHighlighter language="javascript" style={gruvboxDark} className="h-full font-gg1" showLineNumbers={true}>
+              <SyntaxHighlighter
+                language="javascript"
+                style={gruvboxDark}
+                className="h-full font-gg1"
+                showLineNumbers={true}
+              >
                 {codeString}
               </SyntaxHighlighter>
             </div>
-
-
-
-
           </div>
         </div>
       </div>
