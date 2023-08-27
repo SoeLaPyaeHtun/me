@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+body .react-wavy-transitions__wavy-link {
+  background-color: #ebfd44;
+}
+
