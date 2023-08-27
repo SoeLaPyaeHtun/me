@@ -105,8 +105,8 @@ const NavBarL = () => {
     </ul>
   );
   return (
-    <>
-      <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <div className="w-full h-screen">
+      <Navbar color="transparent" className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <MovingText
             type="shakeHorizontal"
@@ -138,7 +138,7 @@ const NavBarL = () => {
           <div>{footer}</div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
