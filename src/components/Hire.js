@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-
-import { Dialog, DialogBody, Typography, Button } from "@material-tailwind/react";
+import { Dialog, DialogBody, Typography } from "@material-tailwind/react";
 import { api } from "../api/api";
 import { FcApproval, FcHighPriority } from "react-icons/fc";
 import axios from "axios";
-import ReactLoading from 'react-loading';
-import MovingText from 'react-moving-text'
+import ReactLoading from "react-loading";
+import MovingText from "react-moving-text";
 import { useNavigate } from "react-router-dom";
 
 const Hire = () => {
@@ -21,8 +20,6 @@ const Hire = () => {
   });
 
   const navigate = useNavigate();
-
-
 
   useEffect(() => {
     if (!firstRender) {
@@ -46,57 +43,44 @@ const Hire = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(mail)
-    setLoading(true)
-    addHireMeMail(mail).then(res => {
-      console.log(typeof res.data)
-      
-      if(typeof res.data == "boolean"){
-        setLoading(false)
+    console.log(mail);
+    setLoading(true);
+    addHireMeMail(mail).then((res) => {
+      console.log(typeof res.data);
+
+      if (typeof res.data == "boolean") {
+        setLoading(false);
         SetMailSucc(true);
         handleOpen();
-      }else{
-        setLoading(false)
+      } else {
+        setLoading(false);
         SetMailSucc(false);
         handleOpen();
-        console.log(res.data)
+        console.log(res.data);
       }
-      
-     
     });
-   
   };
   return (
     <div className="flex w-full h-[calc(100vh-148px)] justify-center">
       <div className="w-4/5 h-4/5 pt-5 rounded-md shadow-lg bg-opacity-25">
-     
         <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-
-            
-
-
-         
-         
             <h2 className="mb-2 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-            <MovingText
-  type="shakeMix"
-  duration="2000ms"
-  delay="0s"
-  direction="normal"
-  timing="ease"
-  iteration="infinite"
-  fillMode="none"
-  className="font-extrabold">
-   
-  Do U want to hire an idiot who loves CODE?
-</MovingText>
+              <MovingText
+                type="shakeMix"
+                duration="2000ms"
+                delay="0s"
+                direction="normal"
+                timing="ease"
+                iteration="infinite"
+                fillMode="none"
+                className="font-extrabold"
+              >
+                Do U want to hire an idiot who loves CODE?
+              </MovingText>
             </h2>
             <p className="mb-4 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 md:text-5xl">
               Hire mE !
-
-            
-
             </p>
             <form className="space-y-8" onSubmit={(e) => handleSubmit(e)}>
               <div>
@@ -166,13 +150,20 @@ const Hire = () => {
                 ></textarea>
               </div>
               <div className="flex justify-between items-center">
-          
-              
                 {/* back to home  */}
-                <div onClick={() => {navigate("/me")}} to="/me" duration={1000} direction="down" color="#E47373">
-                <button type="reset" className="font-gg1 text-sm">Back to home</button>
-              
-            </div>
+                <div
+                  onClick={() => {
+                    navigate("/me");
+                  }}
+                  to="/me"
+                  duration={1000}
+                  direction="down"
+                  color="#E47373"
+                >
+                  <button type="reset" className="font-gg1 text-sm">
+                    Back to home
+                  </button>
+                </div>
                 {/* submit button */}
                 <button type="submit">
                   {/* <span className="relative px-6 py-3 font-bold text-black group">
@@ -184,32 +175,35 @@ const Hire = () => {
                     <span className="relative font-gg1 text-sm">Submit</span>
                   </span> */}
 
-<a href="#_" class="relative inline-block text-lg group">
-<span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-[#eaf1df] rounded-lg group-hover:text-black">
-<span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
-<span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-[#faaca8] group-hover:-rotate-180 ease"></span>
-<span class="relative">Submit</span>
-</span>
-<span class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-[#b06ab3] rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
-</a>
-                  
+                  <a href="#_" class="relative inline-block text-lg group">
+                    <span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-[#eaf1df] rounded-lg group-hover:text-black">
+                      <span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+                      <span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-[#faaca8] group-hover:-rotate-180 ease"></span>
+                      <span class="relative">Submit</span>
+                    </span>
+                    <span
+                      class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-[#b06ab3] rounded-lg group-hover:mb-0 group-hover:mr-0"
+                      data-rounded="rounded-lg"
+                    ></span>
+                  </a>
                 </button>
               </div>
             </form>
           </div>
-     
-      
         </section>
-       
-       
-
-
-
       </div>
       <Dialog open={loading}>
-      <div role="status" class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2">
-        <ReactLoading type={"cylon"} color={"#E47373"} height={100} width={200} />
-    </div>
+        <div
+          role="status"
+          class="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2"
+        >
+          <ReactLoading
+            type={"cylon"}
+            color={"#E47373"}
+            height={100}
+            width={200}
+          />
+        </div>
       </Dialog>
 
       <Dialog open={open}>
@@ -244,7 +238,11 @@ const Hire = () => {
             )}
           </Typography>
           <div className="py-10">
-            <div onClick={() => {navigate('/me')}}>
+            <div
+              onClick={() => {
+                navigate("/me");
+              }}
+            >
               <button onClick={handleOpen}>
                 <span className="relative px-6 py-3 font-bold text-black group">
                   <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>

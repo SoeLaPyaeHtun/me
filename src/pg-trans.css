@@ -1,0 +1,129 @@
+.fadeIn {
+    animation: 0.5s fadeIn both;
+  }
+  
+.fadeOut {
+    animation: 0.5s fadeOut both;
+  }
+  
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-20px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }
+  
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(-20px, 0);
+      opacity: 0;
+    }
+  }
+  
+
+
+
+  @keyframes blob-left-top-anim {
+    0% {
+      transform: scale(1) translate(0, 0);
+   }
+    25% {
+      transform: scale(0.5) translate(-50%, -50%);
+   }
+    50% {
+      transform: scale(1) translate(0, 0);
+   }
+    75% {
+      transform: scale(0.5) translate(50%, 50%);
+   }
+    100% {
+      transform: scale(1) translate(0, 0);
+   }
+ }
+  @keyframes blob-right-top-anim {
+    0% {
+      transform: scale(1) translate(0, 0);
+   }
+    35% {
+      transform: scale(0.5) translate(0, -50%);
+   }
+    50% {
+      transform: scale(1) translate(0, 0);
+   }
+    85% {
+      transform: scale(0.5) translate(0, 50%);
+   }
+    100% {
+      transform: scale(1) translate(0, 0);
+   }
+ }
+  @keyframes blob-left-bottom-anim {
+    0% {
+      transform: scale(1) translate(0, 0);
+   }
+    25% {
+      transform: scale(0.5) translate(-50%, 0);
+   }
+    50% {
+      transform: scale(1) translate(0, 0);
+   }
+    75% {
+      transform: scale(0.5) translate(50%, 0);
+   }
+    100% {
+      transform: scale(1) translate(0, 0);
+   }
+ }
+  @keyframes blob-right-bottom-anim {
+    0% {
+      transform: scale(1) translate(0, 0);
+   }
+    25% {
+      transform: scale(0.5) translate(50%, -50%);
+   }
+    50% {
+      transform: scale(1) translate(0, 0);
+   }
+    75% {
+      transform: scale(0.5) translate(-50%, 50%);
+   }
+    100% {
+      transform: scale(1) translate(0, 0);
+   }
+ }
+  .blob {
+   
+    background: #e97b7a;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+
+    color: white;
+  
+    border-radius: 100%;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: blob-right-left-anim cubic-bezier(0.77, 0, 0.175, 1) 3s infinite;
+ }
+  .blob:nth-child(2) {
+    animation-name: blob-left-botton-anim;
+ }
+  .blob:nth-child(3) {
+    animation-name: blob-left-bottom-anim;
+    animation-delay: 0.2s;
+ }
+  .blob:nth-child(4) {
+    animation-name: blob-left-bottom-anim;
+    animation-delay: 0.4s;
+ }
+
+  
