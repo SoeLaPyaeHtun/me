@@ -165,24 +165,33 @@ const Hire = () => {
                   required
                 ></textarea>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
           
               
                 {/* back to home  */}
                 <div onClick={() => {navigate("/me")}} to="/me" duration={1000} direction="down" color="#E47373">
-                <Button variant="text" className="bg-white hover:bg-[#E47373] font-gg1 text-sm">Back to home</Button>
+                <button type="reset" className="font-gg1 text-sm">Back to home</button>
               
             </div>
                 {/* submit button */}
                 <button type="submit">
-                  <span className="relative px-6 py-3 font-bold text-black group">
+                  {/* <span className="relative px-6 py-3 font-bold text-black group">
                     <span
                       className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2
                      bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"
                     ></span>
                     <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
                     <span className="relative font-gg1 text-sm">Submit</span>
-                  </span>
+                  </span> */}
+
+<a href="#_" class="relative inline-block text-lg group">
+<span class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-[#eaf1df] rounded-lg group-hover:text-black">
+<span class="absolute inset-0 w-full h-full px-5 py-3 rounded-lg bg-gray-50"></span>
+<span class="absolute left-0 w-48 h-48 -ml-2 transition-all duration-300 origin-top-right -rotate-90 -translate-x-full translate-y-12 bg-[#faaca8] group-hover:-rotate-180 ease"></span>
+<span class="relative">Submit</span>
+</span>
+<span class="absolute bottom-0 right-0 w-full h-12 -mb-1 -mr-1 transition-all duration-200 ease-linear bg-[#b06ab3] rounded-lg group-hover:mb-0 group-hover:mr-0" data-rounded="rounded-lg"></span>
+</a>
                   
                 </button>
               </div>

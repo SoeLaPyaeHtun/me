@@ -87,7 +87,7 @@ const First = () => {
             "--angle": "90deg",
             "--border-color":
               "linear-gradient(var(--angle), #ddd6f3, #ffffff ,#faaca8)",
-            "--bg-color": "linear-gradient(#fafafa , #ddd6f3)",
+            "--bg-color": "linear-gradient(#fafafa , #eaf1df)",
           }}
           className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-3xl -rotate-12"
         >
@@ -212,18 +212,18 @@ const First = () => {
             style={{
               "--angle": "0deg",
               "--border-color":
-                "linear-gradient(var(--angle), #ffffff, #19547b)",
+                "linear-gradient(var(--angle), #ffffff, #a1bf6e)",
               "--bg-color": "linear-gradient(#ddd6f3 , #ffaca8)",
             }}
             className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-2xl items-center bg-opacity-50 rotate-12"
           >
             <div className="w-full h-full -rotate-12 rounded-md">
-              <div className="w-full h-8 bg-gray-800 rounded-t-lg flex flex-row justify-start items-center px-3">
-                <div className="w-3 h-3 rounded-full bg-red-900"></div>
+              <div className="w-full h-8 bg-[#ecf7db] rounded-t-lg flex flex-row justify-start border border-white items-center px-3">
+                <div className="w-3 h-3 rounded-full bg-red-400"></div>
                 <div className="px-1"></div>
-                <div className="w-3 h-3 rounded-full bg-black"></div>
+                <div className="w-3 h-3 rounded-full bg-gray-600"></div>
                 <div className="px-1"></div>
-                <div className="w-3 h-3 rounded-full bg-green-900"></div>
+                <div className="w-3 h-3 rounded-full bg-green-400"></div>
               </div>
               <SyntaxHighlighter
                 language="javascript"

@@ -117,7 +117,7 @@ const NavBarL = () => {
   return (
     <div>
       <Navbar color="transparent" className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
-        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
+        <div className="container mx-auto flex items-center justify-between text-blue-gray-400">
           <MovingText
             type="shakeHorizontal"
             duration="500ms"
@@ -128,10 +128,10 @@ const NavBarL = () => {
             fillMode="none"
             className="font-extrabold"
           >
-            <div className="w-8 h-8 bg-[#9bb1ff] shadow-3xl border border-spacing-7 border-red-800 border-1 rounded-full outline-dotted animate-ping flex flex-col justify-end items-center">
+            <div className="w-8 h-8 bg-[#9bb1ff] shadow-3xl border border-spacing-7 border-red-400 border-1 rounded-full outline-dotted animate-ping flex flex-col justify-end items-center">
               <div className="w-1/2 h-1/2 bg-red-400 border border-spacing-7 outline-dotted border-blue-200 animate-ping flex flex-col justify-end items-center shadow-3xl rounded-full ">
-                <div className="w-1/2 h-1/2 bg-brown-900 border border-spacing-7 rounded-full border-black outline-double shadow-3xl animate-bounce flex flex-col justify-end items-center">
-                  <div className="w-1/2 h-1/2 bg-cyan-900 border border-spacing-7 rounded-full border-yellow-400 outline-double shadow-3xl animate-bounce flex flex-col justify-end items-center"></div>
+                <div className="w-1/2 h-1/2 bg-brown-400 border border-spacing-7 rounded-full border-black outline-double shadow-3xl animate-bounce flex flex-col justify-end items-center">
+                  <div className="w-1/2 h-1/2 bg-cyan-400 border border-spacing-7 rounded-full border-yellow-400 outline-double shadow-3xl animate-bounce flex flex-col justify-end items-center"></div>
                 </div>
               </div>
             </div>
