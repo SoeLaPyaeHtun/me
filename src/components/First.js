@@ -89,7 +89,7 @@ const First = () => {
           }}
           className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-3xl -rotate-12"
         >
-          <div className="w-full h-full flex flex-col justify-center items-center rotate-12 shadow-xl">
+          <div className="w-full h-full flex flex-col justify-center items-center rotate-12">
             <div>
               <h1 className="text-3xl md:text-6xl">
                 I'm <br /> <span className="font-bold">Soe La Pyae Htun</span> ,
