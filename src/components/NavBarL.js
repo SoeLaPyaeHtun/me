@@ -1,12 +1,22 @@
 import { React, useEffect, useState } from "react";
 import { Navbar, Typography } from "@material-tailwind/react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaSquareWhatsapp, FaSquareTwitter } from "react-icons/fa6";
 import axios from "axios";
 import { api } from "../api/api";
 import { isMobile, isTablet } from "react-device-detect";
 import Bowser from "bowser";
 import MovingText from "react-moving-text";
+
+
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+
+import Hire from "./Hire";
+import First from "./First";
+
+
+import "../styles.css";
+
 
 const NavBarL = () => {
   const [firstRender, setFirstRender] = useState(false);
@@ -130,7 +140,7 @@ const NavBarL = () => {
           <div>{navList}</div>
         </div>
       </Navbar>
-      <Outlet />
+     <Content />
       <div className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <div className="flex justify-center items-center">copyright@2023</div>
@@ -143,3 +153,34 @@ const NavBarL = () => {
 };
 
 export default NavBarL;
+
+function Content() {
+  const location = useLocation();
+
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [transitionStage, setTransistionStage] = useState("fadeIn");
+
+  useEffect(() => {
+    if (location !== displayLocation) setTransistionStage("fadeOut");
+  }, [location, displayLocation]);
+
+  return (
+    <div
+      className={`${transitionStage}`}
+      onAnimationEnd={() => {
+        if (transitionStage === "fadeOut") {
+          setTransistionStage("fadeIn");
+          setDisplayLocation(location);
+        }
+      }}
+    >
+      <Routes location={displayLocation}>
+     
+          <Route path="/me" element={<First />} />
+          <Route path="*" element={<Navigate to="/me" />} />
+          <Route path="/me/hire" element={<Hire />} />
+
+      </Routes>
+    </div>
+  );
+}

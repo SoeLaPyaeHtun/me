@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { WavyLink } from "react-wavy-transitions";
+
 import { Dialog, DialogBody, Typography, Button } from "@material-tailwind/react";
 import { api } from "../api/api";
 import { FcApproval, FcHighPriority } from "react-icons/fc";
 import axios from "axios";
 import ReactLoading from 'react-loading';
 import MovingText from 'react-moving-text'
+import { useNavigate } from "react-router-dom";
 
 const Hire = () => {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,9 @@ const Hire = () => {
     ip: "",
   });
 
-  
+  const navigate = useNavigate();
+
+
 
   useEffect(() => {
     if (!firstRender) {
@@ -65,7 +68,7 @@ const Hire = () => {
   };
   return (
     <div className="flex w-full h-[calc(100vh-148px)] justify-center">
-      <div className="w-4/5 h-4/5 pt-5 rounded-md shadow-md">
+      <div className="w-4/5 h-4/5 pt-5 rounded-md shadow-lg bg-opacity-25">
      
         <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -166,10 +169,10 @@ const Hire = () => {
           
               
                 {/* back to home  */}
-                <WavyLink to="/me" duration={1000} direction="down" color="#E47373">
+                <div onClick={() => {navigate("/me")}} to="/me" duration={1000} direction="down" color="#E47373">
                 <Button variant="text" className="bg-white hover:bg-[#E47373] font-gg1 text-sm">Back to home</Button>
               
-            </WavyLink>
+            </div>
                 {/* submit button */}
                 <button type="submit">
                   <span className="relative px-6 py-3 font-bold text-black group">
@@ -232,7 +235,7 @@ const Hire = () => {
             )}
           </Typography>
           <div className="py-10">
-            <WavyLink to="/" duration={1000} direction="up" color="#ebfd44">
+            <div onClick={() => {navigate('/me')}}>
               <button onClick={handleOpen}>
                 <span className="relative px-6 py-3 font-bold text-black group">
                   <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
@@ -240,7 +243,7 @@ const Hire = () => {
                   <span className="relative font-gg1">Go Back Home !</span>
                 </span>
               </button>
-            </WavyLink>
+            </div>
           </div>
         </DialogBody>
       </Dialog>

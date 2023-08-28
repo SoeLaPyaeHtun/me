@@ -1,14 +1,16 @@
 import { React, useEffect, useRef } from "react";
-import { WavyLink } from "react-wavy-transitions";
+
 import { TypeAnimation } from "react-type-animation";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { xcode as stxhl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { baseurl } from "../api/api";
+import { Link } from "react-router-dom";
 
 
 const First = () => {
   const boxRef = useRef(null);
   const boxRef2 = useRef(null);
+
 
   useEffect(() => {
     const boxElement = boxRef.current;
@@ -77,7 +79,7 @@ const First = () => {
 
   return (
     <>
-  ]
+  
       <div className="w-full md:h-[calc(100vh-148px)] h-[calc(100vh-178px)] flex md:flex-row flex-col md:justify-center pt-10">
         <div
           ref={boxRef2}
@@ -87,7 +89,7 @@ const First = () => {
               "linear-gradient(var(--angle), #ddd6f3, #ffffff ,#faaca8)",
             "--bg-color": "linear-gradient(#fafafa , #ddd6f3)",
           }}
-          className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] -rotate-12"
+          className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-3xl -rotate-12"
         >
           <div>
             <h1 className="text-3xl md:text-6xl rotate-12">
@@ -119,7 +121,7 @@ const First = () => {
 
           <div className="flex w-full justify-center rotate-12">
             {/* hire me button */}
-            <WavyLink to="/me/hire" duration={1000} direction="up" color="#b06ab3">
+            <Link to={"/me/hire"}>
               <span className="px-4 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#6345f7] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
                 <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#b06ab3] group-hover:h-full"></span>
                 <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -157,7 +159,7 @@ const First = () => {
                   Hire Me !
                 </span>
               </span>
-            </WavyLink>
+              </Link>
 
             <div className="px-5"></div>
 
@@ -211,9 +213,9 @@ const First = () => {
               "--angle": "0deg",
               "--border-color":
                 "linear-gradient(var(--angle), #ffffff, #19547b)",
-              "--bg-color": "linear-gradient(#ddd6f3 , #FAFAFA)",
+              "--bg-color": "linear-gradient(#ddd6f3 , #ffaca8)",
             }}
-            className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] items-center rotate-12"
+            className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-2xl items-center bg-opacity-50 rotate-12"
           >
             <div className="w-full h-full -rotate-12 rounded-md">
               <div className="w-full h-8 bg-gray-800 rounded-t-lg flex flex-row justify-start items-center px-3">
@@ -225,8 +227,8 @@ const First = () => {
               </div>
               <SyntaxHighlighter
                 language="javascript"
-                style={gruvboxDark}
-                className="h-full font-gg1"
+                style={stxhl}
+                className="h-full font-gg1 opacity-80"
                 showLineNumbers={true}
               >
                 {codeString}
