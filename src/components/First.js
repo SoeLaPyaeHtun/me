@@ -70,7 +70,7 @@ const First = () => {
   const fetchResume = () => {
     const aTag = document.createElement("a");
     aTag.href =
-      baseurl + "HireMe/getresume?filename=Soe_La Pyae Htun_Resume.pdf";
+      baseurl + "HireMe/getresume?filename=Soe_La_Pyae_Htun_Resume.pdf";
     document.body.appendChild(aTag);
     aTag.click();
     aTag.remove();
@@ -87,7 +87,7 @@ const First = () => {
               "linear-gradient(var(--angle), #ddd6f3, #ffffff ,#faaca8)",
             "--bg-color": "linear-gradient(#fafafa , #eaf1df)",
           }}
-          className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-3xl -rotate-12"
+          className="w-full md:w-1/3 h-2/5 md:h-4/5 flex flex-col justify-center items-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-2xl shadow-red-100 -rotate-12"
         >
           <div className="w-full h-full flex flex-col justify-center items-center rotate-12">
             <div>
@@ -216,7 +216,7 @@ const First = () => {
                 "linear-gradient(var(--angle), #ffffff, #a1bf6e)",
               "--bg-color": "linear-gradient(#ddd6f3 , #ffaca8)",
             }}
-            className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-2xl items-center bg-opacity-50 rotate-12"
+            className="md:w-full w-4/5 h-full bg-blue-100 justify-center border-2 border-[#0000] p-3 [background:padding-box_var(--bg-color),border-box_var(--border-color)] shadow-2xl shadow-green-100 items-center bg-opacity-50 rotate-12"
           >
             <div className="w-full h-full -rotate-12 rounded-md">
               <div className="w-full h-8 bg-[#ecf7db] rounded-t-lg flex flex-row justify-start border border-white items-center px-3">
@@ -229,7 +229,7 @@ const First = () => {
               <SyntaxHighlighter
                 language="javascript"
                 style={stxhl}
-                className="h-full font-gg1 opacity-80 shadow-3xl rounded-b-lg"
+                className="h-full font-gg1 opacity-80 rounded-b-lg"
                 showLineNumbers={true}
               >
                 {codeString}
