@@ -3,9 +3,12 @@ import { React, useEffect, useRef } from "react";
 import { TypeAnimation } from "react-type-animation";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { xcode as stxhl } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { baseurl } from "../api/api";
+import { api, baseurl } from "../api/api";
 import { Link } from "react-router-dom";
 import "../pg-trans.css";
+import axios from "axios";
+import { isMobile, isTablet } from "react-device-detect";
+import Bowser from "bowser";
 
 const First = () => {
   const boxRef = useRef(null);
@@ -74,6 +77,28 @@ const First = () => {
     document.body.appendChild(aTag);
     aTag.click();
     aTag.remove();
+
+    axios
+        .get("https://ipapi.co/json/")
+        .then(async (res) => {
+          const Os = navigator.platform;
+          const Browser = Bowser.getParser(
+            window.navigator.userAgent
+          ).getBrowserName();
+          const user_data = {
+            ip: res.data.ip,
+            ipVersion: res.data.version,
+            device: isMobile ? "Mobile" : isTablet ? "Tablet" : "Laptop/Destop",
+            os: Os,
+            browser: Browser + " Resume Downloaded",
+            country: res.data.country,
+          };
+          console.log(user_data);
+          return await api.post("VistiMe", user_data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
   };
 
   return (
