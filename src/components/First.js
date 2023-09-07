@@ -50,7 +50,7 @@ const First = () => {
         "C#": ["ASP.NET Core", "ASP.NET Framework", "ASP.NET API"],
         "Java": ["SPRING BOOT API", "SPRING BOOT FLUX" , "API Development"],
         "Linux": ["Linus System Administration", "Ansible Automation"],
-        "JavaScript": ["JavaScript Native", "JQuery", "Functional Programming", "ReactJS" , "NodeJS"],
+        "JavaScript": ["Pure JavaScript","NodeJS","ReactJS" , "NextJS"],
         "CSS": ["BootStrap", "TailwindCSS", "MUI"]
   }
     return (
