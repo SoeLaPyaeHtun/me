@@ -1,4 +1,4 @@
-import { React, useEffect, useRef } from "react";
+import { React, useEffect, useRef, useState } from "react";
 
 import { TypeAnimation } from "react-type-animation";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -9,11 +9,17 @@ import "../pg-trans.css";
 import axios from "axios";
 import { isMobile, isTablet } from "react-device-detect";
 import Bowser from "bowser";
+import { Dialog, DialogBody, Typography } from "@material-tailwind/react";
+import { useNavigate } from "react-router-dom";
+
+import resume from '../assets/resume/Soe_La_Pyae_Htun_Resume.pdf'
+
 
 const First = () => {
   const boxRef = useRef(null);
   const boxRef2 = useRef(null);
-
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     const boxElement = boxRef.current;
     const boxElement2 = boxRef2.current;
@@ -71,12 +77,16 @@ const First = () => {
 `;
 
   const fetchResume = () => {
-    const aTag = document.createElement("a");
-    aTag.href =
-      baseurl + "HireMe/getresume?filename=Soe_La_Pyae_Htun_Resume.pdf";
-    document.body.appendChild(aTag);
-    aTag.click();
-    aTag.remove();
+  //  try{ const aTag = document.createElement("a");
+  //   aTag.href =
+  //     baseurl + "HireMe/getresume?filename=Soe_La_Pyae_Htun_Resume.pdf";
+  //   document.body.appendChild(aTag);
+  //   aTag.click();
+  //   aTag.remove();}catch(e){
+  //     setOpen(false)
+  //   }
+
+  setOpen(true)
 
     axios
         .get("https://ipapi.co/json/")
@@ -99,6 +109,7 @@ const First = () => {
         .catch((err) => {
           console.log(err);
         });
+
   };
 
   return (
@@ -189,7 +200,9 @@ const First = () => {
               <div className="px-5"></div>
 
               {/* Resume button */}
-              <button onClick={() => fetchResume()}>
+              <a href={resume} download="Soe_La_Pyae_Htun_Resume" target='_blank'>
+              {/* <button onClick={() => fetchResume()}> */}
+              <button>
                 <span className="px-4 relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
                   <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#faaca8] group-hover:h-full"></span>
                   <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
@@ -229,6 +242,7 @@ const First = () => {
                   </span>
                 </span>
               </button>
+              </a>
             </div>
           </div>
         </div>
@@ -263,6 +277,48 @@ const First = () => {
           </div>
         </div>
       </div>
+
+
+
+
+
+      <Dialog open={open}>
+        <DialogBody className="grid place-items-center gap-4">
+        
+          <Typography color="black" variant="h2" className="font-gg1">
+          "I'm really Sorry  -_-"
+          </Typography>
+          <Typography
+            color="black"
+            variant="h4"
+            className="text-center font-gg1"
+          >
+           
+              "Backend Operation is under maintenance"
+            <br />
+              "So , I will send my updated Resume File to you shortly !"
+
+            <br />
+         
+              <>
+                If you are urgent ,contact me directly via <br />{" "}
+                <a href="tel:+6586470728">+65 86470728</a>
+              </>
+            
+          </Typography>
+          <div className="py-10">
+           
+              <button onClick={(() => setOpen(false))}>
+                <span className="relative px-6 py-3 font-bold text-black group">
+                  <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-red-300 group-hover:translate-x-0 group-hover:translate-y-0"></span>
+                  <span className="absolute inset-0 w-full h-full border-4 border-black"></span>
+                  <span className="relative font-gg1">Close -_-</span>
+                </span>
+              </button>
+            
+          </div>
+        </DialogBody>
+      </Dialog>
     </>
   );
 };
