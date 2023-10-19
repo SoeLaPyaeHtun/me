@@ -16,6 +16,7 @@ import First from "./First";
 
 
 import "../pg-trans.css";
+import ContactCard from "./ContactCard";
 
 
 const NavBarL = () => {
@@ -179,6 +180,7 @@ function Content() {
           <Route path="/me" element={<First />} />
           <Route path="*" element={<Navigate to="/me" />} />
           <Route path="/me/hire" element={<Hire />} />
+          <Route path="/me/contact" element={<ContactCard />} />
 
       </Routes>
     </div>
