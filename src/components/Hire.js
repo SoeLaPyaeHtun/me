@@ -62,7 +62,7 @@ const Hire = () => {
   };
   return (
     <div className="flex w-full h-[calc(100vh-148px)] justify-center">
-      <div className="w-4/5 h-4/5 pt-5 rounded-md shadow-lg bg-opacity-25">
+      <div className="w-4/5 h-4/5 pt-5 rounded-md bg-opacity-25">
         <section className="">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 className="mb-2 text-2xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
